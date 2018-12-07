@@ -1,3 +1,102 @@
+.main {
+    font-family: HTFDidotLight;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
 .class {
     color: aqua;
+}
+
+#newdiv {
+    cursor: pointer;
+}
+
+.navbar{
+    font-family: HTFDidot;
+    font-weight: 600;
+    font-size: 20px;
+    width: 100%;
+    max-width: 1366px;
+    min-width: 980px;
+    margin: 0 auto;
+}
+
+.navbar img {
+    float: left;
+    cursor: pointer;
+    height: 80px;
+}
+
+.navbar-ul {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-li {
+    height: 50px;
+    float: left;
+}
+
+.first-li {
+    margin-left: 200px;
+}
+
+.navbar-a {
+    min-height: 50px;
+    color: white;
+    text-align: center;
+    padding: 37.5px 70px;
+    text-decoration: none;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar-li .navbar-a:hover {
+    background-color: #111;
+}
+
+.nav-btn{
+    padding: 10px 0;
+    max-height: 25px;
+    margin-left: 1200px;
+}
+.nav-img{
+    max-height: 70px;
+}
+.body {
+    text-align: center;
+    margin: 125px;
+}
+
+@media screen and (max-width: 756px) {}
+
+
+
+@font-face {
+    font-family: HTFDidot;
+    src: url("./assets/fonts/HTF_Didot/Didot\ HTF\ B06\ Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: HTFDidotMed;
+    src: url("./assets/fonts/HTF_Didot/Didot\ HTF\ M06\ Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: HTFDidotLig;
+    src: url("./assets/fonts/HTF_Didot/Didot\ HTF\ L06\ Light.otf") format("opentype");
 }
