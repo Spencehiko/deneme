@@ -4,6 +4,8 @@ var HASH = "f5e98a717934936619c8cb55bed44157";
 var LIMIT = 100;
 var OFFSET = 0;
 var DATA = new Array(1500);
+var IMG = [];
+var THUMBNAIL = "";
 
 
 $(document).ready(function () {
@@ -12,26 +14,30 @@ $(document).ready(function () {
     alert('clicked');
     window.location.href = './haha.html';
   });
-  $.ajax({
-    url: "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=" + KEY + "&hash=" + HASH + "&limit=" + LIMIT + "&offset=" + OFFSET,
-    dataType: "json",
-    limit: 100,
-    apikey: "7e8580151d73b9fa709851f6dd87ba51"
+  //$("#newdiv").on('click', function () {
+    //for (OFFSET = 0; OFFSET < 1491; OFFSET = OFFSET + 100) {
+      function get1() {
+        
+        return $.get("https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=" + KEY + "&hash=" + HASH + "&limit=" + LIMIT + "&offset=" + OFFSET, function (data) {
+          for (var i = 0; i < 10; i++) {
+            DATA[i] = data.data.results[i].name;
+            IMG[i] = data.data.results[i].thumbnail.path + "/standard_fantastic." + data.data.results[i].thumbnail.extension
+            //console.log(data.data);
+            //console.log(DATA[OFFSET + i]);
+              $("#sh-" + i.toLocaleString()).attr("src", IMG[i]);
+              $("#sh-name-" + i.toLocaleString()).text(DATA[i]) ;
+              console.log(IMG[i]);
+          }
+        });
+    };
+    $.when(get1()).done(function(a1){
+      console.log(a1);
+      console.log("done");
   });
-  $("#newdiv").on('click', function () {
-    for (OFFSET = 0; OFFSET < 1491; OFFSET = OFFSET + 100) {
-      $.get("https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=" + KEY + "&hash=" + HASH + "&limit=" + LIMIT + "&offset=" + OFFSET, function (data) {
-        for (var i = 0; i < 100; i++) {
-          DATA[OFFSET + i] = data.data.results[i].name;
-          console.log(DATA[OFFSET + i]);
-        }
-      });
-      }
+    
+    //}
 
-
-
-
-  });
+  //});
 });
 
 
