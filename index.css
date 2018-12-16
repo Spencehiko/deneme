@@ -1,6 +1,12 @@
+body {
+    text-align: center;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+}
+
 .main {
     font-family: HTFDidotLight;
-    
 }
 
 .class {
@@ -11,106 +17,97 @@
     cursor: pointer;
 }
 
-.navbar{
-    font-family: HTFDidot;
+.navbar {
+    font-family: BackIssue;
     font-weight: 600;
     font-size: 20px;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    max-width: 1366px;
-    min-width: 980px;
 }
 
-.navbar img {
+.navbar-img {
+    padding-left: 0;
     float: left;
     cursor: pointer;
     height: 102px;
-    width: 192.5px;
+    max-width: 185px;
 }
 
 .navbar-ul {
-    float: right;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
-    background-color: rgb(20, 20, 20);
-    top: 0;
+    background-color: rgb(63, 63, 63);
+    margin-top: 0;
     width: 100%;
-
-}
-
-.navbar-li {
-    height: 50px;
-    float: left;
+    padding-left:0;
 }
 
 .first-li {
-    margin-left: 200px;
+    margin-left: 300px;
 }
 
+.navbar-li {
+    margin-left: 175px;
+    cursor: pointer;
+    height: 52px;
+    float: left;
+    padding-top: 50px;
+}
 .navbar-a {
-    min-height: 50px;
+    height: 300px;;
     color: white;
-    text-align: center;
-    padding: 50px 70px;
     text-decoration: none;
-    position: relative;
-    top: 50%;
     transform: translateY(-50%);
+    
 }
 
-.navbar-li .navbar-a:hover {
+.navbar-li:hover {
     background-color: #111;
-}
-
-body {
-    text-align: center;
-    background-color: #333;
 }
 
 .column {
     float: left;
-    width: 25%;
+    width: 20%;
     padding: 0 10px;
     margin-top: 100px;
-    margin-left: 75px;
-  }
-  
-  /* Remove extra left and right margins, due to padding */
-  .row {margin: 0 -5px;}
-  
-  /* Clear floats after the columns */
-  .row:after {
+    margin-left: 175px;
+}
+
+.row {
+    margin: 0 -5px;
+    width: 100%
+}
+
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
-  
-  /* Responsive columns */
-  @media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 600px) {
     .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-      
+        width: 33%;
+        display: block;
+        margin-bottom: 20px;
     }
-  }
-  
-  /* Style the counter cards */
-  .card {
+}
+
+.card {
+    font-family: BackIssue;
+    width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     text-align: center;
-    background-color: #f1f1f1;
-  }
+    color: aliceblue;
+    min-height: 400px;
+    cursor: pointer;
+    border-radius: 7.5%;
+    background-color: rgb(110, 4, 4);
+    transition: 0.3s;
+}
 
-
-
-@media screen and (max-width: 756px) {}
-
-
+.card img {
+    min-height: 200px;
+    margin: 30px auto;
+}
 
 @font-face {
     font-family: HTFDidot;
@@ -123,6 +120,21 @@ body {
 }
 
 @font-face {
-    font-family: HTFDidotLig;
+    font-family: HTFDidotLight;
     src: url("./assets/fonts/HTF_Didot/Didot\ HTF\ L06\ Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: BackIssue;
+    src: url("./assets/fonts/Back_Issues/back-issues-bb.regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: BackIssueBold;
+    src: url("./assets/fonts/Back_Issues/back-issues-bb.bold-italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: BackIssueItalic;
+    src: url("./assets/fonts/Back_Issues/back-issues-bb.italic.ttf") format("truetype");
 }

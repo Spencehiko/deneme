@@ -15,27 +15,38 @@ $(document).ready(function () {
     window.location.href = './haha.html';
   });
   //$("#newdiv").on('click', function () {
-    //for (OFFSET = 0; OFFSET < 1491; OFFSET = OFFSET + 100) {
-      function get1() {
-        
-        return $.get("https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=" + KEY + "&hash=" + HASH + "&limit=" + LIMIT + "&offset=" + OFFSET, function (data) {
-          for (var i = 0; i < 10; i++) {
-            DATA[i] = data.data.results[i].name;
-            IMG[i] = data.data.results[i].thumbnail.path + "/standard_fantastic." + data.data.results[i].thumbnail.extension
-            //console.log(data.data);
-            //console.log(DATA[OFFSET + i]);
-              $("#sh-" + i.toLocaleString()).attr("src", IMG[i]);
-              $("#sh-name-" + i.toLocaleString()).text(DATA[i]) ;
-              console.log(IMG[i]);
-          }
-        });
-    };
-    $.when(get1()).done(function(a1){
-      console.log(a1);
-      console.log("done");
+  //for (OFFSET = 0; OFFSET < 1491; OFFSET = OFFSET + 100) {
+  function get1() {
+
+    return $.get("https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=" + KEY + "&hash=" + HASH + "&limit=" + LIMIT + "&offset=" + OFFSET, function (data) {
+
+      for (var i = 0; i < 20; i++) {
+        let characters = data.data.results[i];
+        DATA[i] = characters.name;
+        IMG[i] = characters.thumbnail.path + "/standard_fantastic." + characters.thumbnail.extension
+        let arr = characters.thumbnail.path.split('/');
+        if (arr[arr.length - 1] == "image_not_available") {
+          IMG.splice(i, 1);
+          DATA.splice(i, 1);
+        }
+      }
+      DATA = DATA.filter(function (element) {
+        return element !== undefined;
+      });
+      IMG = IMG.filter(function (element) {
+        return element !== undefined;
+      });
+      for (var i = 0; i < 10; i++) {
+        $("#sh-" + i.toLocaleString()).attr("src", IMG[i]);
+        $("#sh-name-" + i.toLocaleString()).text(DATA[i]);
+      }
+    });
+  };
+  $.when(get1()).done(function (a1) {
+    console.log(a1);
+    console.log("done");
   });
-    
-    //}
+  //}
 
   //});
 });
