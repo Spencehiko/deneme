@@ -63,16 +63,16 @@ body {
     background-color: #111;
 }
 
-.column {
+.card-column {
     float: left;
     width: 20%;
     padding: 0 10px;
     margin-top: 100px;
-    margin-left: 175px;
+    margin-left: 100px;
 }
 
 .row {
-    margin: 0 -5px;
+    padding: auto 150px;
     width: 100%
 }
 
@@ -83,7 +83,7 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-    .column {
+    .card-column {
         width: 33%;
         display: block;
         margin-bottom: 20px;
@@ -109,6 +109,11 @@ body {
     margin: 30px auto;
 }
 
+.header-1 {
+    font-family: BackIssueBold;
+    margin-top: 75px;
+    color: aliceblue;
+}
 @font-face {
     font-family: HTFDidot;
     src: url("./assets/fonts/HTF_Didot/Didot\ HTF\ B06\ Bold.otf") format("opentype");
