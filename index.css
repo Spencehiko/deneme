@@ -27,8 +27,8 @@ body {
     padding-left: 0;
     float: left;
     cursor: pointer;
-    height: 102px;
-    max-width: 185px;
+    min-height: 134px;
+    max-width: 200px;
 }
 
 .navbar-ul {
@@ -37,31 +37,32 @@ body {
     background-color: rgb(63, 63, 63);
     margin-top: 0;
     width: 100%;
-    padding-left:0;
+    padding-left: 0;
 }
 
 .first-li {
-    margin-left: 300px;
+    margin-left: 350px;
 }
 
 .navbar-li {
-    margin-left: 175px;
     cursor: pointer;
     height: 52px;
     float: left;
-    padding-top: 50px;
+    padding: 50px 40px 32px;
 }
+
 .navbar-a {
-    height: 300px;;
+    height: 300px;
     color: white;
     text-decoration: none;
     transform: translateY(-50%);
-    
+    margin: 50px;
 }
 
 .navbar-li:hover {
     background-color: #111;
 }
+
 
 .card-column {
     float: left;
