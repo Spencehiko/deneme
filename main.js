@@ -6,18 +6,18 @@ var OFFSET = 0;
 var DATA = new Array(1500);
 var IMG = [];
 var THUMBNAIL = "";
+var LOADING = false;
 
 
 $(document).ready(function () {
   $("#msg").html("<h2>Hello, World!</h2>");
   $('#home').on('click', () => {
-    alert('clicked');
-    window.location.href = './haha.html';
+    window.location.href = './simple-chess-ai/index.html';
   });
   //$("#newdiv").on('click', function () {
   //for (OFFSET = 0; OFFSET < 1491; OFFSET = OFFSET + 100) {
   function get1() {
-
+    LOADING = true;
     return $.get("https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=" + KEY + "&hash=" + HASH + "&limit=" + LIMIT + "&offset=" + OFFSET, function (data) {
 
       for (var i = 0; i < 20; i++) {
@@ -43,6 +43,7 @@ $(document).ready(function () {
     });
   };
   $.when(get1()).done(function (a1) {
+    LOADING = false;
     console.log(a1);
     console.log("done");
   });

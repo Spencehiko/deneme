@@ -63,18 +63,20 @@ body {
     background-color: #111;
 }
 
+.characters {
+    padding: 0 100px;
+}
 
 .card-column {
     float: left;
     width: 20%;
-    padding: 0 10px;
-    margin-top: 100px;
-    margin-left: 100px;
+    margin: auto 100px;
 }
 
 .row {
     padding: auto 150px;
-    width: 100%
+    width: 100%;
+    margin-top: 100px;
 }
 
 .row:after {
@@ -115,6 +117,26 @@ body {
     margin-top: 75px;
     color: aliceblue;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba( 255, 255, 255, .8) url('http://i.stack.imgur.com/FhHRx.gif') 50% 50% no-repeat;
+}
+
+body.loading .modal {
+    overflow: hidden;
+}
+
+body.loading .modal {
+    display: block;
+}
+
 @font-face {
     font-family: HTFDidot;
     src: url("./assets/fonts/HTF_Didot/Didot\ HTF\ B06\ Bold.otf") format("opentype");
