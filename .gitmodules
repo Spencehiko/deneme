@@ -1,0 +1,3 @@
+[submodule "simple-chess-ai"]
+	path = simple-chess-ai
+	url = https://github.com/lhartikk/simple-chess-ai.git
