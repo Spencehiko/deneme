@@ -17,9 +17,8 @@ $(document).ready(function () {
   //$("#newdiv").on('click', function () {
   //for (OFFSET = 0; OFFSET < 1491; OFFSET = OFFSET + 100) {
   function get1() {
-    LOADING = true;
+    loading();
     return $.get("https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=" + KEY + "&hash=" + HASH + "&limit=" + LIMIT + "&offset=" + OFFSET, function (data) {
-
       for (var i = 0; i < 20; i++) {
         let characters = data.data.results[i];
         DATA[i] = characters.name;
@@ -43,10 +42,28 @@ $(document).ready(function () {
     });
   };
   $.when(get1()).done(function (a1) {
-    LOADING = false;
+    loadingEnd();
     console.log(a1);
     console.log("done");
   });
+  $("#search").on("click", () => {
+    $("#search-row").slideDown("slow", function () {
+      $(".header").on("mouseleave", () => {
+        console.log("left");
+        $("#search-row").slideUp("slow");
+      })
+    });
+    console.log("searching...");
+  })
+  function loading() {
+    $(".main").addClass('blur');
+    $("#loading").show();
+  }
+
+  function loadingEnd() {
+    $(".main").removeClass('blur');
+    $("#loading").hide();
+  }
   //}
 
   //});

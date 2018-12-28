@@ -5,8 +5,28 @@ body {
     padding: 0;
 }
 
+.background-image {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    background-image: url("./assets/images/bg.jpg");
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(7px);
+    -o-filter: blur(7px);
+    -ms-filter: blur(7px);
+    filter: blur(7px);
+}
+
 .main {
     font-family: HTFDidotLight;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .class {
@@ -34,10 +54,11 @@ body {
 .navbar-ul {
     list-style-type: none;
     overflow: hidden;
-    background-color: rgb(63, 63, 63);
+    background-color: rgb(110, 4, 4);
     margin-top: 0;
     width: 100%;
     padding-left: 0;
+    margin-bottom: 0;
 }
 
 .first-li {
@@ -63,18 +84,43 @@ body {
     background-color: #111;
 }
 
+.search-row {
+    display: none;
+    margin-top: 0;
+    padding: 40px 0;
+    width: 100%;
+    max-height: 100px;
+    background-color: rgb(110, 4, 4);
+}
+
+.search-box {
+    border: none; 
+    border:solid 1px #ccc;
+     border-radius: 10px;
+    width: 80%;
+    min-height: 40px;
+}
+
+.search-btn {
+    cursor: pointer;
+    min-height: 42px;
+    margin-left: -55px;
+    border: none; 
+    border:solid 1px #ccc;
+    border-radius: 10px;
+}
+
 .characters {
-    padding: 0 100px;
+    padding: 0 120px;
 }
 
 .card-column {
     float: left;
     width: 20%;
-    margin: auto 100px;
+    margin: auto 105px;
 }
 
 .row {
-    padding: auto 150px;
     width: 100%;
     margin-top: 100px;
 }
@@ -85,11 +131,15 @@ body {
     clear: both;
 }
 
-@media screen and (max-width: 600px) {
-    .card-column {
+@media screen and (max-width: 800px) {
+    .row {
         width: 33%;
         display: block;
-        margin-bottom: 20px;
+        margin-top: 100px;
+    }
+
+    .card {
+        width: 33%;
     }
 }
 
@@ -113,29 +163,139 @@ body {
 }
 
 .header-1 {
-    font-family: BackIssueBold;
+    font-family: KaBlamo;
     margin-top: 75px;
-    color: aliceblue;
+    color: rgb(110, 4, 4);
+    font-size: 100px;
 }
 
-.modal {
+.blur {
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(7px);
+    -o-filter: blur(7px);
+    -ms-filter: blur(7px);
+    filter: blur(7px);
+}
+
+.loading {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba( 255, 255, 255, .8) url('http://i.stack.imgur.com/FhHRx.gif') 50% 50% no-repeat;
-}
-
-body.loading .modal {
-    overflow: hidden;
-}
-
-body.loading .modal {
+    bottom: 0;
+    right: 0;
+  }
+  
+  /* Transparent Overlay */
+  .loading:before {
+    content: '';
     display: block;
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(110, 4, 4,0.3);
+  }
+  
+  /* :not(:required) hides these rules from IE9 and below */
+  .loading:not(:required) {
+    /* hide "loading..." text */
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+  }
+  
+  .loading:not(:required):after {
+    content: '';
+    display: block;
+    font-size: 10px;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    -webkit-animation: spinner 1500ms infinite linear;
+    -moz-animation: spinner 1500ms infinite linear;
+    -ms-animation: spinner 1500ms infinite linear;
+    -o-animation: spinner 1500ms infinite linear;
+    animation: spinner 1500ms infinite linear;
+    border-radius: 0.5em;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+    box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+  }
+  
+  /* Animation */
+  
+  @-webkit-keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @-moz-keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @-o-keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
 
 @font-face {
     font-family: HTFDidot;
@@ -165,4 +325,38 @@ body.loading .modal {
 @font-face {
     font-family: BackIssueItalic;
     src: url("./assets/fonts/Back_Issues/back-issues-bb.italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: FunSized;
+    src: url("./assets/fonts/FunSized/FunSized.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: ShakaPow;
+    src: url("./assets/fonts/ShakaPow/Shaka\ Pow.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: ShakaPowH;
+    src: url("./assets/fonts/ShakaPow/Shaka\ Pow\ Hollow.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: ShakaPowU;
+    src: url("./assets/fonts/ShakaPow/Shaka\ Pow\ Upright.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: ShakaPowUH;
+    src: url("./assets/fonts/ShakaPow/Shaka\ Pow\ Upright\ Hollow.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: KaBlamo;
+    src: url("./assets/fonts/KaBlamo/KA-BLAMO!.ttf") format("truetype");
+}
+
+.white {
+    color: white;
 }
