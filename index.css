@@ -119,7 +119,7 @@ body {
 }
 
 .characters {
-    padding: 0 120px;
+    padding: 0 10%;
 }
 
 
@@ -161,7 +161,7 @@ body {
     background-color: rgb(110, 4, 4);
     transition: 0.3s;
     float: left;
-    margin-left: 20px;
+    margin-left: 3%;
 }
 
 .card img {
