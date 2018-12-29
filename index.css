@@ -47,8 +47,8 @@ body {
     padding-left: 0;
     float: left;
     cursor: pointer;
-    min-height: 134px;
-    max-width: 200px;
+    min-height: 120px;
+    max-width: 150px;
 }
 
 .navbar-ul {
@@ -61,15 +61,23 @@ body {
     margin-bottom: 0;
 }
 
-.first-li {
-    margin-left: 350px;
-}
 
 .navbar-li {
     cursor: pointer;
-    height: 52px;
+    height: 38px;
     float: left;
     padding: 50px 40px 32px;
+}
+
+.last-li {
+    height: 38px;
+    cursor: pointer;
+    float: left;
+    padding: 50px 40px 32px;
+}
+
+.last-li:hover {
+    background-color: #111;
 }
 
 .navbar-a {
@@ -117,11 +125,11 @@ body {
 .card-column {
     float: left;
     width: 20%;
-    margin: auto 105px;
+    margin: auto 65px;
 }
 
 .row {
-    width: 100%;
+    max-width: 100%;
     margin-top: 100px;
 }
 
@@ -151,6 +159,7 @@ body {
     text-align: center;
     color: aliceblue;
     min-height: 400px;
+    max-width: 100%;
     cursor: pointer;
     border-radius: 7.5%;
     background-color: rgb(110, 4, 4);
@@ -159,6 +168,7 @@ body {
 
 .card img {
     min-height: 200px;
+    max-width: 100%;
     margin: 30px auto;
 }
 
